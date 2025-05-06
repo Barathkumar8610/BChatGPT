@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+.chat-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+
+.chat-header {
+  padding: 16px;
+  background-color: #212121;
+  color: #00bcd4;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+}
+
+.chat-history {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #181818;
+}
+
+.message {
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  color: #f1f1f1;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #00acc1;
+  color: #ffffff;
+}
+
+.message.gemini {
+  align-self: flex-start;
+  background-color: #2a2a2a;
+  color: #d0d0d0;
+}
+
+.message.error {
+  color: #ff6b6b;
+  font-style: italic;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #333;
+  background-color: #212121;
+}
+
+.input-area textarea {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  resize: none;
+  outline: none;
+}
+
+.input-area textarea::placeholder {
+  color: #aaa;
+}
+
+.input-area button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #0097a7;
+}
+
+.typing-indicator {
+  font-style: italic;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.typing-indicator .dots span {
+  animation: blink 1.5s infinite;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.typing-indicator .dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator .dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
